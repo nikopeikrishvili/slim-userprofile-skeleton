@@ -14,11 +14,18 @@
                                 <span class="help-block">{{ errors.email | first }}</span>
                             {% endif %}
                         </div>
-                        <div class="form-group{{ errors.name ? ' has-error' : '' }}">
+                        <div class="form-group{{ errors.firstname ? ' has-error' : '' }}">
                             <label for="name">Name</label>
-                            <input type="text" name="name" id="name" class="form-control" value="{{ old.name }}">
-                            {% if errors.name %}
-                                <span class="help-block">{{ errors.name | first }}</span>
+                            <input type="text" name="firstname" id="firstname" class="form-control" value="{{ old.firstname }}">
+                            {% if errors.firstname %}
+                                <span class="help-block">{{ errors.firstname | first }}</span>
+                            {% endif %}
+                        </div>
+                        <div class="form-group{{ errors.lastname ? ' has-error' : '' }}">
+                            <label for="name">Name</label>
+                            <input type="text" name="lastname" id="lastname" class="form-control" value="{{ old.lastname }}">
+                            {% if errors.lastname %}
+                                <span class="help-block">{{ errors.lastname | first }}</span>
                             {% endif %}
                         </div>
                         <div class="form-group{{ errors.password ? ' has-error' : '' }}">

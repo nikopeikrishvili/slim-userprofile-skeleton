@@ -44,7 +44,8 @@ class AuthController extends Controller
     {
         $validation = $this->validator->validate($request, [
             'email' => v::noWhitespace()->notEmpty()->email()->emailAvailable(),
-            'name' => v::notEmpty()->alpha(),
+            'firstname' => v::notEmpty()->alpha(),
+            'lastname' => v::notEmpty()->alpha(),
             'password' => v::noWhitespace()->notEmpty(),
         ]);
 
@@ -54,7 +55,8 @@ class AuthController extends Controller
 
         $user = User::create([
             'email' => $request->getParam('email'),
-            'name' => $request->getParam('name'),
+            'firstname' => $request->getParam('firstname'),
+            'lastname' => $request->getParam('lastname'),
             'password' => password_hash($request->getParam('password'), PASSWORD_DEFAULT),
         ]);
 
